@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(xiaban.xiabanRegister);
 
 	xiaban.updateStatusBarItem();
-	timer = setInterval(xiaban.updateStatusBarItem, 1000);
+	timer = setInterval(() => xiaban.updateStatusBarItem(), 1000);
 }
 
 

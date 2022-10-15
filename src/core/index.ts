@@ -14,7 +14,7 @@ export default class XiaBan {
 	    this.xiabanStatusItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	    this.xiabanStatusItem.command = this.xiabanCommand;
 	    this.xiabanStatusItem.tooltip = '下班了吗？';
-
+        
         this.registerCommand();
     }
 
@@ -34,11 +34,10 @@ export default class XiaBan {
         const { isOutOfWork, hours, minutes } = calcDuration();
         if (isOutOfWork) {
             this.xiabanStatusItem.text = `$(thumbsup) 下班了`;
-            this.xiabanStatusItem.show();
         } else {
             const message = `$(thumbsdown) ${hours}小时${minutes}分`;
             this.xiabanStatusItem.text = message;
-            this.xiabanStatusItem.show();
         }
+        this.xiabanStatusItem.show();
     }
 }

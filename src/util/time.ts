@@ -21,6 +21,7 @@ export function formatLocalStringTime(timeStr: string): string {
  */
 export function calcDuration() {
     const timeStr: string = vscode.workspace.getConfiguration('xiabanlema').get('xiabanTime') || '18:00';
+    console.log('timeStr', timeStr);
     const endTime = formatLocalStringTime(timeStr);
 
     const duration = dayjs.duration(dayjs(endTime).diff(dayjs()));
