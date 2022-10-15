@@ -1,9 +1,11 @@
 import dayjs = require('dayjs');
 import duration = require('dayjs/plugin/duration');
+import isBetween = require('dayjs/plugin/isBetween');
 import * as vscode from 'vscode';
 
 export function setupDayjs() {
     dayjs.extend(duration);
+    dayjs.extend(isBetween);
 }
 
 /**
@@ -20,18 +22,22 @@ export function formatLocalStringTime(timeStr: string): string {
  * @returns 是否下班
  */
 export function calcDuration() {
-    const timeStr: string = vscode.workspace.getConfiguration('xiabanlema').get('xiabanTime') || '18:00';
-    console.log('timeStr', timeStr);
-    const endTime = formatLocalStringTime(timeStr);
+    const xiabanTimeStr: string = vscode.workspace.getConfiguration('xiabanlema').get('xiabanTime') || '18:00';
+    const shangbanTimeStr: string = vscode.workspace.getConfiguration('xiabanlema').get('shangbanTime') || '09:00';
+    const xiabanTime = formatLocalStringTime(xiabanTimeStr);
+    const shangbanTime = formatLocalStringTime(shangbanTimeStr);
+    const duration = dayjs.duration(dayjs(xiabanTime).diff(dayjs()));
 
-    const duration = dayjs.duration(dayjs(endTime).diff(dayjs()));
     let hours = duration.hours();
     let minutes = duration.minutes() % 60;
     let seconds = duration.seconds() % 60;
+    
+    const isOutOfWork = !dayjs().isBetween(shangbanTime, xiabanTime);
+
     let dayInWeek = dayjs().day();
-    const isOutOfWork = hours <= 0 && minutes <= 0 && seconds <= 0;
     // 后续再加上节假日判断
     const isWeekend = dayInWeek === 0 || dayInWeek === 6;
+
     return {
         isOutOfWork,
         isWeekend,

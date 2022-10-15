@@ -1,9 +1,13 @@
 # Change Log
 
-All notable changes to the "xiabanlema" extension will be documented in this file.
+### 1.0.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+实现基本功能，可自定义下班时间，底部状态栏显示剩余时间。
 
-## [Unreleased]
+### 1.0.1
 
-- Initial release
+修复了一个小 bug。
+
+### 1.1.0
+
+可自定义上下班时间。

@@ -33,9 +33,9 @@ export default class XiaBan {
     updateStatusBarItem(): void {
         const { isOutOfWork, hours, minutes } = calcDuration();
         if (isOutOfWork) {
-            this.xiabanStatusItem.text = `$(thumbsup) 下班了`;
+            this.xiabanStatusItem.text = `$(rocket) 下班了`;
         } else {
-            const message = `$(thumbsdown) ${hours}小时${minutes}分`;
+            const message = `$(symbol-event) ${hours}小时${minutes}分`;
             this.xiabanStatusItem.text = message;
         }
         this.xiabanStatusItem.show();

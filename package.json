@@ -1,8 +1,8 @@
 {
   "name": "xiabanlema",
   "displayName": "下班了吗",
-  "description": "一个社畜人在周末加班的时候为了学习新技术写的一个小程序，用来判断是否下班了。",
-  "version": "1.0.3",
+  "description": "一个社畜人在周末加班的时候为了学习新技术写的一个小插件，用来判断是否下班了。",
+  "version": "1.1.0",
   "publisher": "cloudhao1999",
   "author": {
     "name": "cloudhao1999",
@@ -46,6 +46,11 @@
           "type": "string",
           "default": "18:00",
           "description": "你司的下班时间"
+        },
+        "xiabanlema.shangbanTime": {
+          "type": "string",
+          "default": "09:00",
+          "description": "你司的上班时间"
         }
       }
     }
