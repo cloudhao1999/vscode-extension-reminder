@@ -2,8 +2,8 @@
   "name": "xiabanlema",
   "displayName": "下班了吗",
   "description": "一个社畜人在周末加班的时候为了学习新技术写的一个小程序，用来判断是否下班了。",
-  "version": "1.0.2",
-  "publisher": "xiabanlema",
+  "version": "1.0.3",
+  "publisher": "cloudhao1999",
   "author": {
     "name": "cloudhao1999",
     "email": "cyh19991002@gmail.com",
@@ -18,7 +18,7 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^1.72.0"
+    "vscode": "^1.51.0"
   },
   "repository": {
     "type": "git",
