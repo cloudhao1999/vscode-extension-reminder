@@ -1,11 +1,30 @@
 {
   "name": "xiabanlema",
   "displayName": "下班了吗",
-  "description": "",
-  "version": "1.0.0",
+  "description": "一个社畜人在周末加班的时候为了学习新技术写的一个小程序，用来判断是否下班了。",
+  "version": "1.0.1",
+  "publisher": "干巴爹兔",
+  "author": {
+    "name": "cloudhao1999",
+    "email": "cyh19991002@gmail.com",
+    "url": "https://github.com/cloudhao1999"
+  },
+  "keywords": [
+    "下班了吗",
+    "下班"
+  ],
+  "galleryBanner": {
+    "color": "#41205f",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.72.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudhao1999/xiabanlema"
+  },
+  "homepage": "https://github.com/cloudhao1999/xiabanlema",
   "categories": [
     "Other"
   ],
@@ -31,6 +50,8 @@
       }
     }
   },
+  "license": "MIT",
+  "icon": "images/icon.png",
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
