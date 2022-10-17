@@ -2,7 +2,7 @@
   "name": "xiabanlema",
   "displayName": "下班了吗",
   "description": "一个社畜人在周末加班的时候为了学习新技术写的一个小插件，用来判断是否下班了。",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "publisher": "cloudhao1999",
   "author": {
     "name": "cloudhao1999",
@@ -51,6 +51,16 @@
           "type": "string",
           "default": "09:00",
           "description": "你司的上班时间"
+        },
+        "xiabanlema.notification": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否开启通知"
+        },
+        "xiabanlema.notificationTime": {
+          "type": "number",
+          "default": 30,
+          "description": "通知时间（下班前几分钟）"
         }
       }
     }

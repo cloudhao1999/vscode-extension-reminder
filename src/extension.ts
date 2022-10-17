@@ -1,7 +1,7 @@
-import dayjs = require('dayjs');
 import * as vscode from 'vscode';
 import { setupDayjs } from './util/time';
 import XiaBan from "./core/index";
+import { getConfiguration } from './util/config';
 
 
 let timer: NodeJS.Timer;
@@ -12,9 +12,20 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(xiaban.xiabanStatusItem);
 	context.subscriptions.push(xiaban.xiabanRegister);
+	context.subscriptions.push(xiaban.xiabanConfiguration);
 
 	xiaban.updateStatusBarItem();
-	timer = setInterval(() => xiaban.updateStatusBarItem(), 1000);
+	xiaban.notifyFunc();
+
+	timer && clearInterval(timer);
+	timer = setInterval(() => {
+		xiaban.updateStatusBarItem();
+		// 判断是否需要监听下班时间
+		const notificationTime: boolean = getConfiguration('notification') || true; 
+		if (notificationTime) {
+			xiaban.notifyFunc();
+		}
+	}, 1000 * 35);
 }
 
 
