@@ -2,7 +2,7 @@
   "name": "xiabanlema",
   "displayName": "下班了吗",
   "description": "一个社畜人在周末加班的时候为了学习新技术写的一个小插件，用来判断是否下班了。",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "publisher": "cloudhao1999",
   "author": {
     "name": "cloudhao1999",
@@ -66,7 +66,7 @@
     }
   },
   "license": "MIT",
-  "icon": "images/icon.png",
+  "icon": "images/icon.webp",
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
