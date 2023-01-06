@@ -38,7 +38,7 @@ export default class XiaBan {
     // 事件通知
     notifyFunc() {
         const isOutOfWorkSoon = this.isOutOfWorkSoon();
-        const notificationTime: boolean = getConfiguration('notification') || true;
+        const notificationTime: boolean = getConfiguration('notification');
         if (isOutOfWorkSoon && notificationTime) {
             vscode.window.showInformationMessage('下班时间快到啦！');
         }

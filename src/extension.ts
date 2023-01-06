@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 	timer = setInterval(() => {
 		xiaban.updateStatusBarItem();
 		// 判断是否需要监听下班时间
-		const notificationTime: boolean = getConfiguration('notification') || true; 
+		const notificationTime: boolean = getConfiguration('notification'); 
 		if (notificationTime) {
 			xiaban.notifyFunc();
 		}
